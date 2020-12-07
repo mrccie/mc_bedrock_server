@@ -29,15 +29,33 @@ sudo systemctl status docker
 
 
 
+#### Pull the Minecraft Bedrock Server Image ####
+
+# Pull the minecraft bedrock container image
+sudo docker pull itzg/minecraft-bedrocker-server
+
+
+
+
 #### Executing Docker without Sudo ####
 
-## This is Optional, but this script will assume you chose this option
+## This is Optional
 
 # Add your username to the docker group:
-sudo usermod -aG docker ${USER}
+echo ""
+echo "ATTENTION-1:"
+echo "If you want your user to be able to use docker without sudo, copy+paste this:"
+echo "    sudo usermod -aG docker ${USER}"
+echo ""
+echo "Then log out and log back in so the permission change can take effect."
 
-# Now we need to log out and log back in for this to take effect
-echo "Please log out now so permission changes can take effect.  Kindly run install-2.sh when you log back in."
 
 
+#### Instructions for next steps ####
+
+echo ""
+echo ""
+echo "ATTENTION-2:"
+echo "Please execute the 'build-container.sh' script to create minecraft containers."
+echo "You can run this script multiple times to build multiple containers."
 
