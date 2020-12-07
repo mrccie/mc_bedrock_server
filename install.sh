@@ -56,6 +56,6 @@ echo "Then log out and log back in so the permission change can take effect."
 echo ""
 echo ""
 echo "ATTENTION-2:"
-echo "Please execute the 'build-container.sh' script to create minecraft containers."
-echo "You can run this script multiple times to build multiple containers."
+echo "Please execute the 'make_mcb_container.sh' script to create minecraft container setup scripts."
+echo "Each script can then be run to create consistent containers and volumes that can be automatically backed up."
 

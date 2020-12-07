@@ -3,7 +3,7 @@
 
 #### Variables ####
 docker_volume_dir=/var/lib/docker/volumes/
-mcb_volume_prefix=txx*
+mcb_volume_prefix=mcb_*
 mcb_volume_files="${docker_volume_dir}${mcb_volume_prefix}"
 backup_folder=/home/etch/mc_bedrock_server/backups/
 
@@ -38,6 +38,6 @@ done
 #### Cleanup - Remove the Oldest Backup Files ####
 
 # Keeps the 12 most recent backups
-cd backup_folder
+cd $backup_folder
 ls -t | sed -e '1,12d' | xargs -d '\n' rm
 

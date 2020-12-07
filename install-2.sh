@@ -3,7 +3,7 @@
 
 #### Inform User of Purpose ####
 
-echo "This script will create a location for container setup scripts and backups."
+echo "This script will create a location for container setup scripts, backups and backup scripts."
 echo "Would you like to continue? (y/n)"
 read user_choice
 
@@ -34,11 +34,11 @@ mkdir /home/${USER}/mc_bedrock_server/backups
 echo "Creating folder /home/${USER}/mc_bedrock_server/docker_run_commands/"
 mkdir /home/${USER}/mc_bedrock_server/docker_run_commands
 
+echo "Creating folder /home/${USER}/mc_bedrock_server/scripts/"
+mkdir /home/${USER}/mc_bedrock_server/scripts
 
+echo "Copying scripts..."
+cp /home/${USER}/git/mc_bedrock_server/scripts/* /home/${USER}/mc_bedrock_server/scripts/
 
-
-#### Create Backup Target File ####
-
-echo "Creating container volume backup target file"
-touch /home/${USER}/mc_bedrock_server/backups/backup_list.conf
+echo "done."
 
