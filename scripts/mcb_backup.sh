@@ -6,6 +6,18 @@ docker_volume_dir=/var/lib/docker/volumes/
 mcb_volume_prefix=mcb_*
 mcb_volume_files="${docker_volume_dir}${mcb_volume_prefix}"
 backup_folder=/home/etch/mc_bedrock_server/backups/
+user_name=${USER}
+
+
+
+#### Check the User is Root ####
+if [ "$EUID" -ne 0 ]
+then
+        echo "Please run as root"
+        echo "$(date +%Y%m%d) - mcb_backup.sh not being run as root" >> /home/$user_name/mc_bedrock_server/alert.txt
+        exit
+fi
+
 
 
 #### Backup MCB Containers ####

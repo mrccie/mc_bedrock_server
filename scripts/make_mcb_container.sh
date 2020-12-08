@@ -162,3 +162,8 @@ echo "itzg/minecraft-bedrock-server" >> $file_path
 # Make the file executable
 chmod 777 $file_path
 
+
+
+#### Provide Further Direction ####
+
+echo "Your docker run script is now ready; execute it from the docker_run_commands directory."
