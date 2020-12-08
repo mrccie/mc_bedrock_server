@@ -36,12 +36,12 @@ During Setup:
 Update the operating system:
 ```sh
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 ```
 
 Set your local timezone:
 ```sh
-sudo timedatectl America/New_York
+sudo timedatectl set-timezone America/New_York
 ```
 
 
@@ -85,5 +85,5 @@ cd mc_bedrock_server
 
 Use the install script:
 ```sh
-sudo ./install.sh
+./install.sh
 ```
