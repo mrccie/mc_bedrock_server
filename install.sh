@@ -32,7 +32,7 @@ sudo systemctl status docker
 #### Pull the Minecraft Bedrock Server Image ####
 
 # Pull the minecraft bedrock container image
-sudo docker pull itzg/minecraft-bedrocker-server
+sudo docker pull itzg/minecraft-bedrock-server
 
 
 
