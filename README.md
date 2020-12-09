@@ -12,9 +12,14 @@ Version: 1.0
 
 ## PURPOSE
 
-mc_bedrock_server is a package designed to install Docker and a few Bedrock Minecraft servers on a Ubuntu 20 host.  Hopefully this package will let you focus on what's important (playing Minecraft) and offload what isn't (the mundane setup stuff).
+mc_bedrock_server is a package designed to install Docker and spin up containers for as many Bedrock Minecraft servers on a Ubuntu 20 host as you might want.  Hopefully this package will let you focus on what's important (playing Minecraft) and offload what isn't (the mundane setup stuff).  It's really just supposed to enable a halfway techie person to spin up all the system stuff and dependencies without having to leverage Google... while also making it repeatable enough that you don't have to worry too much about software/hardware failures blowing away a bunch of custom/one-off stuff.
 
-This package will also - optionally - enable a (very ugly and very basic) backup strategy to add backups to a local folder in the middle of the night.  It's on you to put the files it backs up into the cloud or USB (or whatever).
+This package will also - optionally - enable a (very basic) backup strategy to add backups to a local folder in the middle of the night.  It's on you to put the files it backs up into the cloud or USB (or whatever).
+
+
+## Attribution
+
+This package is 100% a hack to make itzg's minecraft bedrock server (docker: https://hub.docker.com/r/itzg/minecraft-bedrock-server) a little easier for me to use.  itzg is the person that did 99.99% of the magic here, not me.
 
 
 ## System Requirements
@@ -22,7 +27,7 @@ This package will also - optionally - enable a (very ugly and very basic) backup
 This solution has been tested on the following hardware:
 - Platform: Intel i7 7700 (4x CPU), 16GB of RAM, 256GB NVMe
 - Hypervisor: VMWare ESXi
-- OS: Ubuntu 20.04 server lts
+  > Installed and run successfully on 2x vCPU, 2GB RAM, 40GB Storage (running Ubuntu 20.04 LTS)
 
 
 ## Ubuntu Initialization
