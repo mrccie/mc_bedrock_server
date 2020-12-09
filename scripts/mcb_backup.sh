@@ -9,7 +9,7 @@ user_name=$1
 docker_volume_dir=/var/lib/docker/volumes/
 mcb_volume_prefix=mcb_*
 mcb_volume_files="${docker_volume_dir}${mcb_volume_prefix}"
-backup_folder=/home/$1/mc_bedrock_server/backups/
+backup_folder=/home/$user_name/mc_bedrock_server/backups/
 
 
 
@@ -17,7 +17,7 @@ backup_folder=/home/$1/mc_bedrock_server/backups/
 if [ -d "$backup_folder" ] 
 then
     # Log Start
-    echo "$(date +%Y%m%d) - Starting Backup..." >> /home/$user_name/logs/backup_log.txt
+    echo "$(date +%Y%m%d) - Starting Backup..." >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 
 else
     echo "Error: Directory /home/$1/mc_bedrock_server/backups/ does not exist.  Did you pass the username as an argument?"
