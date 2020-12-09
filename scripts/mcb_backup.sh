@@ -49,7 +49,7 @@ do
 
 
 	# Create the archive name
-	backup_file="${backup_folder}${vol_file}.$(date +%Y%m%d).tar.gz"
+	backup_file="${backup_folder}${vol_file}.$(date +%Y%m%d-%H%M).tar.gz"
 
         # Log Action
         echo "$(date +%Y%m%d) - > Creating $backup_file" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
