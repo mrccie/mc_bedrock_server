@@ -21,6 +21,7 @@ then
 
 else
     echo "Error: Directory /path/to/dir does not exists."
+    exit 1
 fi
 
 
