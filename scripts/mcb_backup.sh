@@ -52,7 +52,7 @@ do
 	backup_file="${backup_folder}${vol_file}.$(date +%Y%m%d).tar.gz"
 
         # Log Action
-        echo "$(date +%Y%m%d) - > Creating $backup_file" >> /home/$user_name/logs/backup_log.txt
+        echo "$(date +%Y%m%d) - > Creating $backup_file" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 
 	# Create an archive of the volume
 	tar -zcf $backup_file $vol_file
@@ -68,7 +68,7 @@ done
 #### Cleanup - Remove the Oldest Backup Files ####
 
 # Log Action
-echo "$(date +%Y%m%d) - > Deleting any old files" >> /home/$user_name/logs/backup_log.txt
+echo "$(date +%Y%m%d) - > Deleting any old files" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 
 
 # Keeps the 12 most recent backups
@@ -77,4 +77,5 @@ ls -t | sed -e '1,12d' | xargs -d '\n' rm
 
 
 # Log Action
-echo "$(date +%Y%m%d) - > Done." >> /home/$user_name/logs/backup_log.txt
+echo "$(date +%Y%m%d) - > Done." >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
+
