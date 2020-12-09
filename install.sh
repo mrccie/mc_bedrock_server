@@ -76,6 +76,9 @@ mkdir /home/${USER}/mc_bedrock_server/docker_run_commands
 echo "Creating folder /home/${USER}/mc_bedrock_server/scripts/"
 mkdir /home/${USER}/mc_bedrock_server/scripts
 
+echo "Creating folder /home/${USER}/mc_bedrock_server/logs/"
+mkdir /home/${USER}/mc_bedrock_server/logs
+
 echo "Copying scripts..."
 cp /home/${USER}/git/mc_bedrock_server/scripts/* /home/${USER}/mc_bedrock_server/scripts/
 

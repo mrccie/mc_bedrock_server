@@ -19,6 +19,9 @@ then
 fi
 
 
+# Log Start
+echo "$(date +%Y%m%d) - Starting Backup..." >> /home/$user_name/logs/backup_log.txt
+
 
 #### Backup MCB Containers ####
 
@@ -32,9 +35,11 @@ do
 	docker stop $vol_file
 
 
-	
 	# Create the archive name
 	backup_file="${backup_folder}${vol_file}.$(date +%Y%m%d).tar.gz"
+
+        # Log Action
+        echo "$(date +%Y%m%d) - > Creating $backup_file" >> /home/$user_name/logs/backup_log.txt
 
 	# Create an archive of the volume
 	tar -zcf $backup_file $vol_file
@@ -49,7 +54,14 @@ done
 
 #### Cleanup - Remove the Oldest Backup Files ####
 
+# Log Action
+echo "$(date +%Y%m%d) - > Deleting any old files" >> /home/$user_name/logs/backup_log.txt
+
+
 # Keeps the 12 most recent backups
 cd $backup_folder
 ls -t | sed -e '1,12d' | xargs -d '\n' rm
 
+
+# Log Action
+echo "$(date +%Y%m%d) - > Done." >> /home/$user_name/logs/backup_log.txt
