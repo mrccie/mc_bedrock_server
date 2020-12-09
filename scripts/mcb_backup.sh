@@ -44,21 +44,23 @@ cd $docker_volume_dir
 # For each "mcb_*" folder in the Docker volume area...
 for vol_file in $mcb_volume_prefix
 do
+
 	# Stop the associated Docker container
+	echo "$(date +%Y%m%d) - > Stopping container $vol_file" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 	docker stop $vol_file
 
 
 	# Create the archive name
 	backup_file="${backup_folder}${vol_file}.$(date +%Y%m%d-%H%M).tar.gz"
 
-        # Log Action
-        echo "$(date +%Y%m%d) - > Creating $backup_file" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 
 	# Create an archive of the volume
+	echo "$(date +%Y%m%d) - > Creating $backup_file" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 	tar -zcf $backup_file $vol_file
 
 
 	# Restart the associated Docker container
+	echo "$(date +%Y%m%d) - > Starting container $vol_file" >> /home/$user_name/mc_bedrock_server/logs/backup_log.txt
 	docker start $vol_file
 
 done
