@@ -72,6 +72,7 @@ echo "$(date +%Y%m%d) - > Deleting any old files" >> /home/$user_name/mc_bedrock
 
 
 # Keeps the 12 most recent backups
+#  Do note that if you have fewer than the specified number of files, you get an 'rm' message - but thats OK
 cd $backup_folder
 ls -t | sed -e '1,12d' | xargs -d '\n' rm
 
