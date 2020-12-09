@@ -79,6 +79,9 @@ mkdir /home/${USER}/mc_bedrock_server/scripts
 echo "Creating folder /home/${USER}/mc_bedrock_server/logs/"
 mkdir /home/${USER}/mc_bedrock_server/logs
 
+echo "Creating file /home/${USER}/mc_bedrock_server/logs/backup_log.txt"
+touch /home/${USER}/mc_bedrock_server/logs/backup_log.txt
+
 echo "Copying scripts..."
 cp /home/${USER}/git/mc_bedrock_server/scripts/* /home/${USER}/mc_bedrock_server/scripts/
 

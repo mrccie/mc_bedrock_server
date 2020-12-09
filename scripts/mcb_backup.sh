@@ -1,12 +1,27 @@
 #!/bin/bash
 
 
+#### Passed-In Variables ####
+user_name=$1
+
+
 #### Variables ####
 docker_volume_dir=/var/lib/docker/volumes/
 mcb_volume_prefix=mcb_*
 mcb_volume_files="${docker_volume_dir}${mcb_volume_prefix}"
-backup_folder=/home/etch/mc_bedrock_server/backups/
-user_name=${USER}
+backup_folder=/home/$1/mc_bedrock_server/backups/
+
+
+
+#### Check that the Passed-in User Has the Necessary Folders ####
+if [ -d "$backup_folder" ] 
+then
+    # Log Start
+    echo "$(date +%Y%m%d) - Starting Backup..." >> /home/$user_name/logs/backup_log.txt
+
+else
+    echo "Error: Directory /path/to/dir does not exists."
+fi
 
 
 
@@ -18,9 +33,6 @@ then
         exit
 fi
 
-
-# Log Start
-echo "$(date +%Y%m%d) - Starting Backup..." >> /home/$user_name/logs/backup_log.txt
 
 
 #### Backup MCB Containers ####

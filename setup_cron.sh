@@ -17,7 +17,7 @@ if [ -f /var/spool/cron/crontabs/root ]; then
 fi
 
 # Step 2: Add the cron job to the list
-echo "0 3 * * * /home/$user_name/mc_bedrock_server/scripts/mcb_backup.sh" >> /home/$user_name/mc_bedrock_server/scripts/cron_list.txt
+echo "0 3 * * * /home/$user_name/mc_bedrock_server/scripts/mcb_backup.sh $user_name" >> /home/$user_name/mc_bedrock_server/scripts/cron_list.txt
 
 # Step 3: Reload edited list of cron jobs
 sudo crontab /home/$user_name/mc_bedrock_server/scripts/cron_list.txt
