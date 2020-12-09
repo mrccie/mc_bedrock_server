@@ -20,7 +20,7 @@ then
     echo "$(date +%Y%m%d) - Starting Backup..." >> /home/$user_name/logs/backup_log.txt
 
 else
-    echo "Error: Directory /path/to/dir does not exists."
+    echo "Error: Directory /home/$1/mc_bedrock_server/backups/ does not exist.  Did you pass the username as an argument?"
     exit 1
 fi
 
