@@ -146,17 +146,24 @@ touch $file_path
 # Populate the file
 echo "#!/bin/bash" >> $file_path
 echo "" >> $file_path
-echo "docker run -d \\" >> $file_path
+echo "docker run -it \\" >> $file_path
 echo "-e EULA=TRUE \\" >> $file_path
 echo "-e SERVER_PORT=$server_port \\" >> $file_path
 echo "-e DIFFICULTY=\"$difficulty\" \\" >> $file_path
 echo "-e VIEW_DISTANCE=$view_distance \\" >> $file_path
 echo "-e LEVEL_NAME=\"$level_name\" \\" >> $file_path
+echo "-e GAMEMODE=\"$game_mode\" \\" >> $file_path
 echo "-p $server_port:$server_port/udp \\" >> $file_path
 echo "--name $container_name \\" >> $file_path
 echo "-v $container_name:/data \\" >> $file_path
 echo "--restart unless-stopped \\" >> $file_path
 echo "itzg/minecraft-bedrock-server" >> $file_path
+echo "" >> $file_path
+echo "" >> $file_path
+echo "!--- Notice ---!" >> $file_path
+echo ": Your container is in INTERACTIVE mode." >> $file_path
+echo ": Please move it to DETACHED mode with CTRL-P then CTRL-Q." >> $file_path
+echo ": You can re-attach via the 'docker attach' command." >> $file_path
 
 
 # Make the file executable
