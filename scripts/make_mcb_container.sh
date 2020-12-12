@@ -146,10 +146,12 @@ touch $file_path
 # Populate the file
 echo "#!/bin/bash" >> $file_path
 echo "" >> $file_path
+echo "echo \"\"" >> $file_path
 echo "echo \"!--- Notice ---!\"" >> $file_path
 echo "echo \": Your container is in INTERACTIVE mode.\"" >> $file_path
 echo "echo \": Please move it to DETACHED mode with CTRL-P then CTRL-Q.\"" >> $file_path
 echo "echo \": You can re-attach via the 'docker attach' command.\"" >> $file_path
+echo "echo \"\"" >> $file_path
 echo "" >> $file_path
 echo "docker run -it \\" >> $file_path
 echo "-e EULA=TRUE \\" >> $file_path
