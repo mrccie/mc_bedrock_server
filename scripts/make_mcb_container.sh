@@ -160,7 +160,7 @@ echo "--restart unless-stopped \\" >> $file_path
 echo "itzg/minecraft-bedrock-server" >> $file_path
 echo "" >> $file_path
 echo "" >> $file_path
-echo "!--- Notice ---!" >> $file_path
+echo "echo \"!--- Notice ---!\"" >> $file_path
 echo "echo \": Your container is in INTERACTIVE mode.\"" >> $file_path
 echo "echo \": Please move it to DETACHED mode with CTRL-P then CTRL-Q.\"" >> $file_path
 echo "echo \": You can re-attach via the 'docker attach' command.\"" >> $file_path
